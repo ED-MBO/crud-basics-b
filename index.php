@@ -37,6 +37,13 @@ $result = $statement->fetchAll(PDO::FETCH_OBJ);
           <h3>Hoogste achtbanen van Europa</h3>
         </div>
       </div>
+
+      <div class="row justify-content-center my-3">
+        <div class="col-10">
+          <h6>Nieuwe Achtbaan <a href="./create.php"><i class="bi bi-plus-square text-danger"></i></a></h6>
+        </div>
+      </div>
+
       <div class="row justify-content-center">
         <div class="col-10">
           <table class="table table-striped table-hover">
