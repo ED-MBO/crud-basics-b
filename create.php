@@ -22,12 +22,12 @@ if (isset($_POST['submit'])) {
                )";
 
     $statement = $pdo->prepare($sql);
-    $statement->bindValue(':rollerCoaster', $_POST['naamAchtbaan'], PDO::PARAM_STR);
-    $statement->bindValue(':amusementPark', $_POST['naamPretpark'], PDO::PARAM_STR);
-    $statement->bindValue(':country', $_POST['land'], PDO::PARAM_STR);
-    $statement->bindValue(':topspeed', $_POST['topsnelheid'], PDO::PARAM_INT);
-    $statement->bindValue(':height', $_POST['hoogte'], PDO::PARAM_INT);
-    $statement->bindValue(':yearOfConstruction', $_POST['bouwjaar'], PDO::PARAM_INT);
+    $statement->bindValue(':naamAchtbaan', $_POST['naamAchtbaan'], PDO::PARAM_STR);
+    $statement->bindValue(':naamPretpark', $_POST['naamPretpark'], PDO::PARAM_STR);
+    $statement->bindValue(':land', $_POST['land'], PDO::PARAM_STR);
+    $statement->bindValue(':topsnelheid', $_POST['topsnelheid'], PDO::PARAM_INT);
+    $statement->bindValue(':hoogte', $_POST['hoogte'], PDO::PARAM_INT);
+    $statement->bindValue(':bouwjaar', $_POST['bouwjaar'], PDO::PARAM_STR);
     $statement->execute();
 
     $display = 'flex';
@@ -88,10 +88,10 @@ if (isset($_POST['submit'])) {
                 </div>
                 <div class="mb-3">
                     <label for="inputYearOfConstruction" class="form-label">Bouwjaar:</label>
-                    <input type="text" name="bouwjaar" placeholder="Vul het bouwjaar in" class="form-control" id="inputYearOfConstruction" required value="<?= $_POST['bouwjaar'] ?? '' ?>">
+                    <input type="date" name="bouwjaar" placeholder="Vul het bouwjaar in" class="form-control" id="inputYearOfConstruction" required value="<?= $_POST['bouwjaar'] ?? '' ?>">
                 </div>
                 <div class="d-grid gap-2">
-                    <button type="submit" class="btn btn-primary btn-lg mt-2">Verstuur</button>
+                    <button name="submit" type="submit" class="btn btn-primary btn-lg mt-2">Verstuur</button>
                 </div>
             </form>
         </div>

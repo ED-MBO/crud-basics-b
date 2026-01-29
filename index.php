@@ -54,6 +54,7 @@ $result = $statement->fetchAll(PDO::FETCH_OBJ);
               <th>topsnelheid (km/u)</th>
               <th>Hoogte (m)</th>
               <th>Bouwjaar</th>
+              <th>Wijzig</th>
               <th>Verwijder</th>
             </thead>
             <tbody>
@@ -65,6 +66,11 @@ $result = $statement->fetchAll(PDO::FETCH_OBJ);
                 <td class="text-center"><?= $rollercoaster->Topspeed ?></td>
                 <td class="text-center"><?= $rollercoaster->Height ?></td>
                 <td><?= $rollercoaster->YOFC ?></td>
+                <td class="text-center">
+                  <a href="update.php?id=<?= $rollercoaster->Id;?>">
+                    <i class="bi bi-pencil-square text-primary"></i>
+                  </a>
+                </td>
                 <td class="text-center">
                   <a href="delete.php?id=<?= $rollercoaster->Id;?>">
                     <i class="bi bi-x-square text-danger"></i>
